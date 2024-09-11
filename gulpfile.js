@@ -56,5 +56,12 @@ function watchTask() {
     );
 }
 
+function build(cb) {
+    // body omitted
+    cb();
+  }
+  
+  exports.build = build;
+
 // default gulp task
-exports.default = series(scssTask, jsTask, browserSyncServe, watchTask);
+exports.default = series(scssTask, jsTask, browserSyncServe, watchTask, build);
